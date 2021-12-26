@@ -21,6 +21,7 @@
     "require": "./index.js"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.10.0"
+    "@discordjs/builders": "^0.10.0",
+    "discordjsh": "^2.0.2"
   }
 }

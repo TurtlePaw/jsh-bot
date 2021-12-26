@@ -1,12 +1,11 @@
-const { commandBuilder } = require("../../discord.jsh/src");
+const { commandBuilder } = require("discordjsh");
 const Discord = require("discord.js");
-const { Color, Website: Docs } = require("../Config/config");
-const DocJ = require("../Config/docs.json");
+const { Color, Website: Docs, Logo } = require("../Config/config");
+const DocJ = require("discordjsh").DocsJSON;
 
 const Config = module.exports = {
     name: "docs",
     description: "Gets a link to the jsh docs.",
-    devOnly: true,
     async execute(interaction, client){
         const q = interaction.options.getString("query");
 
@@ -15,7 +14,8 @@ const Config = module.exports = {
                 embeds: [
                     new Discord.MessageEmbed()
                     .setColor(Color)
-                    .setTitle("Discord.jsh Docs")
+                    .setAuthor({ name: "Discord.jsh", iconURL: Logo.png })
+                    .setTitle("<:rules:890070276094713906> Discord.jsh Docs")
                     .setURL(Docs)
                     .setDescription(`> Discord.jsh is a package built to make making a bot easier!`)
                 ],
@@ -41,9 +41,10 @@ const Config = module.exports = {
                     embeds: [
                         new Discord.MessageEmbed()
                         .setColor(Color)
+                        .setAuthor({ name: "Discord.jsh", iconURL: Logo.png })
                         .setTitle(`<:rules:890070276094713906> ${ClosestFind.name}`)
                         .setURL(ClosestFind.url)
-                        .setDescription(ClosestFind.description)
+                        .setDescription(`${ClosestFind.description}\n\n${ClosestFind.example}`)
                     ],
                     components: [{
                         type: 1,
@@ -66,7 +67,8 @@ const Config = module.exports = {
                     embeds: [
                         new Discord.MessageEmbed()
                         .setColor(Color)
-                        .setTitle("Discord.jsh Docs")
+                        .setAuthor({ name: "Discord.jsh", iconURL: Logo.png })
+                        .setTitle("<:rules:890070276094713906> Discord.jsh Docs")
                         .setURL(Docs)
                         .setDescription(`${finds.map(e => `<:join:863464329613672508> [${e.name}](${e.url})`).join("\n")}`)
                     ],

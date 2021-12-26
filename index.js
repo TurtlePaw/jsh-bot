@@ -1,4 +1,4 @@
-const jsh = require("../discord.jsh");
+const jsh = require("discordjsh");
 const { token } = require("./Config/config.json")
 const BConfig = require("./Config/config");
 const Discord = require("discord.js");
