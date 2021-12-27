@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "@discordjs/builders": "^0.10.0",
-    "discordjsh": "^2.0.4"
+    "discordjsh": "^2.0.4",
+    "turtle-api": "^5.0.0"
   }
 }

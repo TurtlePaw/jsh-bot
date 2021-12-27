@@ -1,7 +1,12 @@
 const jsh = require("discordjsh");
-const { token } = require("./Config/config.json")
+const { token, wh } = require("./Config/config.json")
 const BConfig = require("./Config/config");
 const Discord = require("discord.js");
+const Turtle = require("turtle-api");
+const TurtleClient = new Turtle();
+TurtleClient.setWebhook(wh)
+.setColor("GREEN")
+.init(86400000);
 
 const client = new jsh.Client({
     token,
@@ -16,7 +21,7 @@ const client = new jsh.Client({
 .create({ 
     partials: ['MESSAGE', 'CHANNEL', 'REACTION'],
     intents: ["GUILD_MEMBERS"]
- }) //TODO: Make emoji manager
+}) //TODO: Make emoji manager
 
 module.exports.client = {
     getClient: function(){
